@@ -1,0 +1,363 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.svc.note.NewTask$TaskFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="2dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="18dp"
+                android:fitsSystemWindows="true"
+                app:contentPadding="2dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Short Description"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:background="#00000000"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/desc"
+                        android:layout_marginTop="28dp"
+                        android:background="#f1f1f1"/>
+
+                    <LinearLayout
+                        android:id="@+id/DateLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/desc"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="50dp">
+                    <TextView
+                        android:id="@+id/DueDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_weight="1"
+                        android:textSize="19dp"
+                        android:textColor="@android:color/darker_gray"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:background="#00000000" />
+
+                    <android.support.v7.widget.AppCompatImageButton
+                        android:id="@+id/btn_cal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:clickable="true"
+                        android:soundEffectsEnabled="true"
+                        android:src="@drawable/ic_content_add"
+                        android:background="?attr/selectableItemBackground"
+                        />
+                    </LinearLayout>
+                    <ImageView
+                        android:id="@+id/date_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/DateLayout"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginTop="-20dp"
+                        android:src="@drawable/ic_action_event"/>
+                    <TextView
+                        android:id="@+id/DueDateValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Date"
+                        android:layout_marginTop="-12dp"
+                        android:layout_below="@+id/DateLayout"
+                        android:textSize="16dp"
+                        android:layout_toRightOf="@+id/date_icon"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/DateLayout"
+                        android:layout_marginTop="32dp"
+                        android:background="#f1f1f1"/>
+
+                    <LinearLayout
+                        android:id="@+id/TimeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/DueDateValue"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="38dp">
+                        <TextView
+                            android:id="@+id/Time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reminder"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="18dp"
+                            android:layout_weight="1"
+                            android:textSize="18dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:textColorHint="@android:color/darker_gray"
+                            android:background="#00000000" />
+
+                        <android.support.v7.widget.AppCompatImageButton
+                            android:id="@+id/btn_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:clickable="true"
+                            android:soundEffectsEnabled="true"
+                            android:src="@drawable/ic_content_add"
+                            android:background="?attr/selectableItemBackground"
+                            />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/reminder_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/TimeLayout"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginTop="-20dp"
+                        android:src="@drawable/ic_action_alarm"/>
+                    <TextView
+                        android:id="@+id/TimeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Reminder"
+                        android:layout_marginTop="-12dp"
+                        android:layout_toRightOf="@+id/reminder_icon"
+                        android:layout_below="@+id/TimeLayout"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"/>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/TimeValue"
+                        android:layout_marginTop="28dp"
+                        android:background="#f1f1f1"/>
+
+                    <LinearLayout
+                        android:id="@+id/PriorityLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/TimeValue"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="50dp">
+                        <TextView
+                            android:id="@+id/priority_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Priority"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="18dp"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/darker_gray"/>
+                    </LinearLayout>
+                    <Spinner
+                        android:id="@+id/priority_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_below="@+id/PriorityLayout"
+                        android:backgroundTint="#d11f08" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/PriorityLayout"
+                        android:layout_marginTop="60dp"
+                        android:background="#f1f1f1"/>
+
+                    <LinearLayout
+                        android:id="@+id/LabelLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/PriorityLayout"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="80dp"
+                        android:layout_marginRight="14dp">
+
+                        <TextView
+                            android:id="@+id/Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Label"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="18dp"
+                            android:textSize="19dp"
+                            android:layout_weight="1"
+                            android:textColor="@android:color/darker_gray"/>
+                        <View
+                            android:id="@+id/circle"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:clickable="true"
+                            android:layout_gravity="right|center_vertical"
+                            android:background="@drawable/label" />
+
+                        </LinearLayout>
+                    <ImageView
+                        android:id="@+id/label_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/LabelLayout"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginTop="6dp"
+                        android:src="@drawable/ic_maps_local_offer"/>
+                    <TextView
+                        android:id="@+id/LabelValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Label"
+                        android:layout_marginTop="12dp"
+                        android:layout_toRightOf="@+id/label_icon"
+                        android:layout_below="@+id/LabelLayout"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/LabelLayout"
+                        android:layout_marginTop="60dp"
+                        android:background="#f1f1f1"/>
+
+                    <LinearLayout
+                        android:id="@+id/NotificationLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/LabelLayout"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="80dp">
+                        <TextView
+                            android:id="@+id/Notification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Notification"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="18dp"
+                            android:layout_weight="1"
+                            android:textSize="18dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:textColorHint="@android:color/darker_gray"
+                            android:background="#00000000" />
+
+                        <!--<android.support.v7.widget.AppCompatImageButton
+                            android:id="@+id/btn_notif"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:clickable="true"
+                            android:soundEffectsEnabled="true"
+                            android:src="@drawable/ic_content_add"
+                            android:background="?attr/selectableItemBackground"/> -->
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/btn_notif"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:clickable="true"/>
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/notif_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_below="@+id/NotificationLayout"
+                        android:src="@drawable/ic_social_notifications_on"
+                        />
+                    <TextView
+                        android:id="@+id/NotificationValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Notification"
+                        android:layout_marginTop="3dp"
+                        android:layout_toRightOf="@+id/notif_icon"
+                        android:layout_below="@+id/NotificationLayout"
+                        android:textSize="16dp"
+                        android:clickable="true"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/NotificationLayout"
+                        android:layout_marginTop="50dp"
+                        android:background="#f1f1f1"/>
+
+                    <LinearLayout
+                        android:id="@+id/PeopleLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/NotificationLayout"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="65dp"
+                        android:layout_marginBottom="40dp">
+                        <TextView
+                            android:id="@+id/People"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="People"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="18dp"
+                            android:textSize="18dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:textColorHint="@android:color/darker_gray"
+                            android:background="#00000000" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
